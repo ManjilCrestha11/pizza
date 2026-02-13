@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For My Valentine ❤️</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <audio id="valentine-music" loop>
+        <source src="glue-song.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="envelope-container">
+        <img src="envelope.png" alt="Envelope" id="envelope" />
+        <p>♡ A special letter for you ♡</p>
+    </div>
+
+    <div id="letter-container">
+        <div class="letter-window">
+            <h1 id="letter-title">Will you be my Valentine?</h1>
+            <img src="cat_heart.gif" class="cat" id="letter-cat" />
+
+            <div class="buttons" id="letter-buttons">
+                <img src="yes.png" class="btn yes-btn" alt="Yes" />
+                <div class="no-wrapper">
+                    <img src="no.png" class="btn no-btn" alt="No" />
+                </div>
+            </div>
+
+            <div id="big-gift-slide" style="display: none; text-align: center;">
+                <p>Click to open your presents! 🎁</p>
+                <img src="photo1.jpg" id="big-gift-btn" class="gift-box wiggle" style="width: 130px; margin-top: 10px;">
+            </div>
+
+            <div id="three-gifts-slide" style="display: none; text-align: center;">
+                <h1 class="gift-header">Choose a gift! 🎁</h1>
+                <div class="presents-row">
+                    <img src="photo2.jpg" id="gift1" class="gift-box sub-gift wiggle">
+                    <img src="photo3.jpg" id="gift2" class="gift-box sub-gift wiggle">
+                    <img src="photo4.jpg" id="gift3" class="gift-box sub-gift wiggle">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="polaroid-modal" class="modal">
+        <div class="gallery-wrapper custom-layout">
+            <span class="close-polaroid">&times;</span>
+            <div class="gallery-grid">
+                <div class="side-column" id="left-gallery"></div>
+                <div class="center-strip">
+                    <div class="slot-top"></div>
+                    <div class="photo-strip-container">
+                        <div class="photo-strip" id="center-strip-gallery"></div>
+                    </div>
+                </div>
+                <div class="side-column" id="right-gallery"></div>
+            </div>
+            <button class="back-btn" onclick="document.getElementById('polaroid-modal').style.display='none'">↩</button>
+        </div>
+    </div>
+
+    <div id="flower-modal" class="modal">
+        <div class="flower-layout-wrapper">
+            <div class="flower-container-main">
+                <div class="sticky-note">
+                    <div class="tape"></div>
+                    <p class="note-title">Mi Amor🥰</p>
+                    <hr class="note-line">
+                    <p class="note-main-text">A flower that never fades, <br> just like my love for you. ❤️</p>
+                </div>
+                <div class="flower-animation-area">
+                    <div class="flower">
+                        <div class="mid"><div class="love-text">I LOVE YOU</div></div>
+                        <div class="petal p1"></div><div class="petal p2"></div>
+                        <div class="petal p3"></div><div class="petal p4"></div>
+                        <div class="leaf"></div><div class="stem"></div>
+                    </div>
+                </div>
+            </div>
+            <button class="close-flower-btn" onclick="closeFlower()">↩ Go Back</button>
+        </div>
+    </div>
+
+    <div id="final-letter-container" style="display: none;">
+        <div class="scroll-wrapper">
+            <div class="scroll-body">
+                <img src="cat_heart.gif2" class="scroll-cat" alt="Cat holding heart">
+                <div class="wax-seal">❤️</div>
+                <h2 class="letter-header">Words From my Heart👉👈</h2>
+                <div class="letter-content">
+                    <p>Mi Amor💕</p>
+                            <p>I wanted to take a moment to tell you how much you mean to me. You make every day brighter just by being in it.</p>
+                            <p>Every second spent with you is a treasure I hold dear to my heart. Forever yours🥰.</p>
+                </div>
+                <div class="letter-footer">
+                    <span>With all my love,</span><br>
+                    <strong class="signature">Your Melon</strong>
+                </div>
+            </div>
+            <button class="back-to-gifts-fancy" onclick="closeFinalLetter()">↩ Return to Gifts</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

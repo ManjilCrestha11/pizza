@@ -1,0 +1,423 @@
+/* --- Base Styles --- */
+body {
+    margin: 0; 
+    height: 100vh; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    background-image: url("heart-bg.jpg"); 
+    background-size: cover; 
+    background-position: center;
+    font-family: "Pixelify Sans", sans-serif; 
+    overflow: hidden;
+}
+
+#envelope-container { 
+    text-align: center; 
+    cursor: pointer; 
+}
+
+#envelope { 
+    width: 180px; 
+    animation: pulse 1.5s infinite; 
+}
+
+@keyframes pulse { 
+    0%, 100% { transform: scale(1); } 
+    50% { transform: scale(1.1); } 
+}
+
+#letter-container { 
+    display: none; 
+    position: fixed; 
+    inset: 0; 
+    justify-content: center; 
+    align-items: center; 
+    z-index: 10; 
+}
+
+.letter-window {
+    width: 95vw; 
+    max-width: 700px; 
+    padding: 140px 20px 20px 20px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    background-image: url("window.png"); 
+    background-size: 100% 100%;
+    transform: scale(1.2); 
+    opacity: 0; 
+    transition: 0.6s ease;
+}
+
+.letter-window.open { 
+    transform: scale(1); 
+    opacity: 1; 
+}
+
+.btn { 
+    width: 100px; 
+    cursor: pointer; 
+    transition: 0.3s; 
+}
+
+.no-wrapper { 
+    width: 100px; 
+    height: 50px; 
+    position: relative; 
+}
+
+.buttons { 
+    display: flex; 
+    gap: 20px; 
+    margin-top: 10px; 
+}
+
+.gift-box { 
+    cursor: pointer; 
+    transition: 0.3s; 
+}
+
+.sub-gift { 
+    width: 90px; 
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1)); 
+}
+
+.presents-row { 
+    display: flex; 
+    justify-content: center; 
+    gap: 15px; 
+}
+
+.wiggle:hover { 
+    animation: giftWiggle 0.5s ease infinite; 
+}
+
+@keyframes giftWiggle { 
+    0%, 100% { transform: rotate(0deg); } 
+    25% { transform: rotate(5deg); } 
+    75% { transform: rotate(-5deg); } 
+}
+
+.modal { 
+    display: none; 
+    position: fixed; 
+    inset: 0; 
+    background: rgba(0, 0, 0, 0.9); 
+    justify-content: center; 
+    align-items: center; 
+    z-index: 1000; 
+}
+
+/* --- Gift 1: Red Heart Gallery --- */
+.gallery-wrapper.custom-layout {
+    background-color: #ff4d6d;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="white" opacity="0.4"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>');
+    background-size: 40px 40px; 
+    border: 10px solid #ffffff; 
+    border-radius: 20px; 
+    padding: 25px; 
+    width: 90%; 
+    max-width: 1000px; 
+    box-shadow: 0 0 30px rgba(255, 77, 109, 0.6); 
+    max-height: 90vh; 
+    overflow-y: auto; 
+    position: relative;
+}
+
+.gallery-grid { 
+    display: grid; 
+    grid-template-columns: 1.5fr 180px 1.5fr; 
+    gap: 20px; 
+    align-items: center; 
+}
+
+.polaroid-item.red-theme { 
+    background: white; 
+    padding: 12px 12px 30px 12px; 
+    box-shadow: 8px 12px 20px rgba(0,0,0,0.2); 
+    text-align: center; 
+}
+
+.polaroid-item.red-theme img { 
+    width: 100%; 
+    display: block; 
+}
+
+.center-strip { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    height: 400px; 
+}
+
+.photo-strip-container { 
+    width: 150px; 
+    height: 100%; 
+    overflow: hidden; 
+    background: white; 
+}
+
+.photo-strip { 
+    padding: 10px; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 10px; 
+}
+
+.strip-img { 
+    width: 130px; 
+    height: 130px; 
+    object-fit: cover; 
+}
+
+@keyframes printStrip { 
+    from { transform: translateY(-50%); opacity: 0; } 
+    to { transform: translateY(0); opacity: 1; } 
+}
+
+.photo-strip.printing { 
+    animation: printStrip 2.5s ease-out forwards; 
+}
+
+.back-btn { 
+    margin-top: 15px; 
+    background: #ff4d6d; 
+    color: white; 
+    border: none; 
+    padding: 10px; 
+    border-radius: 50%; 
+    cursor: pointer; 
+}
+
+/* --- Gift 2: Note Touching Flower --- */
+.flower-layout-wrapper {
+    background: radial-gradient(circle, #fff0f3 0%, #ffc2d1 100%);
+    width: 100vw; 
+    height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    position: relative;
+}
+
+.flower-container-main { 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 0px; 
+    z-index: 5;
+    margin-top: -30px; 
+}
+
+.sticky-note { 
+    background: #fff9c4; 
+    width: 240px; 
+    padding: 15px; 
+    box-shadow: 10px 10px 25px rgba(0,0,0,0.1); 
+    transform: rotate(-3deg); 
+    z-index: 10;
+    position: relative;
+    margin-bottom: -15px; /* Pulls flower up to touch note */
+}
+
+.flower-animation-area { 
+    width: 100%; 
+    height: 250px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: flex-end; 
+    transform: scale(1.3); 
+}
+
+.flower { position: relative; display: flex; justify-content: center; }
+
+.stem { 
+    width: 8px; 
+    height: 0; 
+    background: #4caf50; 
+    border-radius: 10px; 
+    animation: growStem 2s ease-out forwards; 
+}
+
+@keyframes growStem { to { height: 160px; } }
+
+.petal { 
+    position: absolute; 
+    top: -30px; 
+    width: 60px; 
+    height: 80px; 
+    background: #ff4d6d; 
+    border-radius: 50%; 
+    opacity: 0; 
+    transform-origin: bottom center; 
+}
+
+.mid { 
+    position: absolute; 
+    top: -20px; 
+    width: 80px; 
+    height: 80px; 
+    background: #ffb3c1; 
+    border-radius: 50%; 
+    z-index: 5; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    opacity: 0; 
+    animation: bloom 1s 2s ease-out forwards; 
+}
+
+.love-text { 
+    font-size: 0.6rem; 
+    color: #a32a2a; 
+    font-weight: bold; 
+    text-align: center; 
+}
+
+.p1 { --rotation: 0deg; animation: bloom 1s 2s ease-out forwards; }
+.p2 { --rotation: 90deg; animation: bloom 1s 2.3s ease-out forwards; }
+.p3 { --rotation: 180deg; animation: bloom 1s 2.6s ease-out forwards; }
+.p4 { --rotation: 270deg; animation: bloom 1s 2.9s ease-out forwards; }
+
+@keyframes bloom { 
+    from { opacity: 0; transform: scale(0) rotate(var(--rotation, 0deg)); } 
+    to { opacity: 1; transform: scale(1) rotate(var(--rotation, 0deg)); } 
+}
+
+.leaf { 
+    position: absolute; 
+    left: 8px; 
+    bottom: 60px; 
+    width: 40px; 
+    height: 20px; 
+    background: #4caf50; 
+    border-radius: 0 20px; 
+    opacity: 0; 
+    animation: bloom 1s 1.5s ease-out forwards; 
+}
+
+.close-flower-btn { 
+    position: absolute; 
+    bottom: 30px; 
+    background: white; 
+    color: #ff4d6d; 
+    border: 2px solid #ff4d6d; 
+    padding: 10px 20px; 
+    border-radius: 50px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    z-index: 9999; 
+    transition: 0.3s;
+}
+
+/* --- Gift 3: Scroll with Cat Bottom-Left --- */
+#final-letter-container {
+    position: fixed; inset: 0; z-index: 2000; display: none;
+    background: radial-gradient(circle, rgba(255, 240, 243, 0.98) 0%, rgba(255, 182, 193, 0.95) 100%);
+    justify-content: center; align-items: center; padding: 20px;
+}
+
+.scroll-wrapper { 
+    width: 100%; 
+    max-width: 420px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    animation: scrollSlideUp 1s ease-out; 
+}
+
+@keyframes scrollSlideUp { 
+    from { opacity: 0; transform: translateY(50px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+.scroll-body {
+    background: #fff9e6; 
+    width: 100%; 
+    padding: 50px 30px 80px 30px; /* Extra bottom padding for cat */
+    position: relative; 
+    text-align: center;
+    box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.2), inset 0 -20px 20px -20px rgba(0,0,0,0.2), 0 20px 40px rgba(0,0,0,0.15);
+    border-top: 15px solid #f3e5ab; 
+    border-bottom: 15px solid #f3e5ab; 
+    border-radius: 40px / 10px;
+}
+
+.scroll-cat { 
+    position: absolute; 
+    bottom: 15px; 
+    left: 15px; 
+    width: 85px; 
+    z-index: 5; 
+    transform: rotate(-5deg);
+}
+
+.wax-seal {
+    position: absolute; 
+    top: -35px; 
+    left: 30px; 
+    width: 65px; 
+    height: 65px; 
+    background: #b32a2a; 
+    color: white; 
+    border-radius: 50%;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    font-size: 28px; 
+    border: 4px solid #8b1e1e;
+}
+
+.letter-header { 
+    color: #ff4d6d; 
+    font-size: 1.6rem; 
+    margin-bottom: 15px; 
+    font-family: 'Pixelify Sans', sans-serif; 
+}
+
+.letter-content p { 
+    font-family: 'Georgia', serif; 
+    font-style: italic; 
+    font-size: 1.1rem; 
+    line-height: 1.5; 
+    color: #444; 
+}
+
+.signature { 
+    font-size: 1.4rem; 
+    color: #ff4d6d; 
+    font-family: 'Pixelify Sans', sans-serif; 
+}
+
+.back-to-gifts-fancy { 
+    margin-top: 20px; 
+    background: #4a90e2; 
+    color: white; 
+    border: none; 
+    padding: 12px 30px; 
+    border-radius: 10px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    box-shadow: 0 4px 0px #357abd; 
+}
+
+/* Global Particles */
+.kiss-particle { 
+    position: fixed; 
+    bottom: -10%; 
+    font-size: 2.5rem; 
+    z-index: 3000; 
+    animation: kissFloat 3s linear forwards; 
+}
+
+@keyframes kissFloat { 
+    0% { transform: translateY(0) scale(0.5); opacity: 1; } 
+    100% { transform: translateY(-120vh) translateX(60px) scale(1.5); opacity: 0; } 
+}
+
+@media (max-width: 768px) {
+    .gallery-grid { grid-template-columns: 1fr; justify-items: center; }
+    .letter-window { transform: scale(1) !important; padding-top: 110px; }
+}
